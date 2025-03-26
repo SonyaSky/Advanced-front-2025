@@ -1,0 +1,60 @@
+.toggle-btn {
+    background-color: #B5B5B5;
+    border: none;
+    border-radius: 100px;
+    width:45px;
+    height:23px;
+    transition: background-color 0.1s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle-btn .thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 100px;
+    background-color: #F9F9F9;
+    transform: translateX(0);
+    transition: left 0.15s ease, box-shadow 0.1s ease;
+    position: absolute;
+    left: 5px;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.toggle-btn:hover .thumb{
+    box-shadow: 0 0 0 10px #3A3A3A14; 
+}
+
+.toggle-btn.checked {
+    background-color: #375FFF;
+}
+
+.toggle-btn.checked .thumb{
+    left: 23px;
+}
+
+.toggle-btn:active .thumb{
+    height: 18px;
+    width: 18px;
+    box-shadow: 0 0 0 10px #3A3A3A14; 
+}
+
+.toggle-btn.checked:active .thumb{
+    right:2px;
+}
+
+
+.toggle-btn.disabled {
+    background-color: #E7EBFF;
+    cursor: not-allowed;
+}
+
+.toggle-btn.disabled .thumb {
+    box-shadow: none;
+}
+
+.toggle-btn.checked.disabled {
+    background-color: #DCDCDC;
+}
+
