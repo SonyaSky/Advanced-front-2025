@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import {Row, Col, Image, Button} from 'react-bootstrap';
+import {Row, Col, Image} from 'react-bootstrap';
 
 import { useTheme } from "../../contexts/themeContext";
 import InputWithLabel from "../inputWithLabel/InputWithLabel";
 import './loginFormStyle.css';
 import Switch from "../switch/switch";
+import LangDropdown from "../languageDropdown/langDropdown";
+import Button from "../button/Button";
 
 const loginForm = () => {
     const { theme, toggleLanguage, currentTranslations } = useTheme();
@@ -40,9 +42,8 @@ const loginForm = () => {
                         <Card.Text>{currentTranslations.toggle}</Card.Text>
                     </Col>
                 </Row>
-                <div className="d-grid gap-2">
-                <Button className="enter-btn">
-                {currentTranslations.enter}
+                <div className="d-grid gap-2 mt-3">
+                <Button className="button primary" text={currentTranslations.enter}>
                 </Button>
                 </div>
             </Card.Body>

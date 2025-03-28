@@ -1,0 +1,49 @@
+.button {
+    padding: 13px 42px 17px 40px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "Roboto";
+    font-weight: 400;
+    height: 49px;
+    border-radius: 8px;
+    letter-spacing: 3%;
+    transition: background-color 0.3s linear;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.primary {
+    background-color: #375FFF;
+}
+.primary:hover {
+    background-color: #002FEA;
+    color: #FFFFFF;
+}
+.primary:active {
+    background-color: #204CFF;
+    color: #FFFFFF;
+}
+.primary:disabled {
+    background-color: #97A9F1;
+    cursor: default;
+}
+
+.outlined {
+    border: 1px solid #3A3A3A;
+    color: #3A3A3A;
+    background-color: #FFFFFF;
+    transition: border 0.3s linear, color 0.3s linear;
+}
+.outlined:hover {
+    border: 2px solid #3A3A3A;
+}
+.outlined:active {
+    border: 2px solid #204CFF;
+    color: #204CFF;
+}
+.outlined:disabled {
+    border: 1px solid #97A9F1;
+    cursor: default;
+    color: #97A9F1;
+}
+

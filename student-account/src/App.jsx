@@ -1,21 +1,20 @@
-import { useState } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import LoginForm from './components/loginForm/loginForm.jsx';
+
 import { ThemeProvider } from './contexts/themeContext';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css'
+import LoginPage from './pages/loginPage.jsx';
 
 function App() {
 
   return (
     <>
     <ThemeProvider>
-      <LoginForm>
-      </LoginForm>
+      <Routes>
+        <Route path="/" element={<LoginPage />} /> 
+      </Routes>
     </ThemeProvider>
     </>
   )

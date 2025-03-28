@@ -15,7 +15,7 @@ const translations = {
         email: "Электронная почта",
         password: "Пароль",
         toggle: "Запомнить меня",
-        enter: "ВОЙТИ"
+        enter: "войти"
     }
 };
 export const ThemeProvider = ({ children }) => {
