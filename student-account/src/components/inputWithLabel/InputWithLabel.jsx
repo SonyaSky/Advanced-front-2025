@@ -1,11 +1,11 @@
 import React from 'react';
 import './input.css';
 
-const InputWithLabel = ({type, label}) => {
+const InputWithLabel = ({type, label, onChange}) => {
     return (
         <div className="input-container">
-            <input type={type} id="input" required />
-            <label htmlFor="input">{label}</label>
+            <input type={type} required onChange={onChange}/>
+            <label >{label}</label>
         </div>
     );
 };

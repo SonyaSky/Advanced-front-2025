@@ -1,0 +1,11 @@
+{
+    "login": {
+        "title": "Login to your account",
+        "email": "Email",
+        "password": "Password",
+        "toggle": "Remember me",
+        "enter": "Login",
+        "lang": "English",
+        "image": "UNITED_KINGDOM_1_.svg"
+    }
+}
