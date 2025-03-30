@@ -23,12 +23,14 @@ const loginForm = () => {
       };
 
     const ChangePassword = (e) => {    
-        setEmail(e.target.value);
+        setPassword(e.target.value);
       };
-    const ToggleSwitch = () => {
-        setIsChecked((isChecked) => !isChecked);
-    }
 
+      const ToggleSwitch = (e) => {
+        e.preventDefault(); 
+        setIsChecked((prev) => !prev);
+    };
+    
     const Login = (event) => {
         event.preventDefault();
         const data = {
@@ -41,11 +43,11 @@ const loginForm = () => {
 
     return(
         <>
-        <Row>
-        <Col>
-        <Image src="login_pic.svg" fluid />
+        <Row className="gx-1 gy-3">
+        <Col className="col-12 col-lg-6  d-flex align-content-center justify-content-center">
+        <Image className="image" src="login_pic.svg" fluid/>
         </Col>
-        <Col>
+        <Col className="col-12 col-lg-6 d-flex align-content-center justify-content-center">
         <Card className="card">
             <Card.Body id="body">
                 <Form>

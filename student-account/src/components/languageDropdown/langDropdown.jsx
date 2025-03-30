@@ -3,19 +3,18 @@ import { DropdownButton, Image, Col, Row, Navbar, Container, Dropdown } from 're
 import {useTranslation} from 'react-i18next';
 
 import './langDropdownStyle.css';
-import DropdownContent from './dropdownContent';
 
-const DropdownTitle = ({title, image}) => {
+const DropdownTitle = ({ title, image, isOpen }) => {
     return (
         <Row className='gx-2 align-items-center'> 
             <Col xs={6} className="d-flex align-items-center"> 
-                <div className='language'>{title}</div>
+                <div className='d-none d-sm-block language'>{title}</div>
             </Col>
             <Col xs={3} className="d-flex align-items-start" >
             <Image src={image} />
             </Col>
             <Col xs={4} className='d-flex justify-content-end arrow' >
-            <Image src="Chevron_Down.svg" fluid/>
+            <Image src={isOpen ? "Chevron_Up.svg" : "Chevron_Down.svg"} fluid/>
             </Col>
         </Row>
     );
@@ -37,7 +36,7 @@ const DropdownELement = ({title, image}) => {
 
 const LangDropdown = () => {
     const [t, i18n] = useTranslation("login");
-
+    const [isOpen, setIsOpen] = useState(false);
 
     const ToEngish = () => {
         ChangeLanguage('en');
@@ -54,10 +53,10 @@ const LangDropdown = () => {
 
     return (
         <Navbar className="navbar" fixed='top'>      
-            <Col md={{span: 2, offset: 10}} className='dropdown-container'>
-            <Dropdown>
+            <Col className='d-flex justify-content-end dropdown-container'>
+            <Dropdown onToggle={(isOpen) => setIsOpen(isOpen)} >
             <Dropdown.Toggle id="dropdown-basic-button">
-            <DropdownTitle title={t("login.lang")} image={t("login.image")} />
+            <DropdownTitle title={t("login.lang")} image={t("login.image")} isOpen={isOpen}/>
             </Dropdown.Toggle>
 
             <Dropdown.Menu className='dropdown-content'>

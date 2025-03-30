@@ -9,7 +9,13 @@
 }
 
 .dropdown-container {
-    
+    margin-right: 14%;
+}
+
+@media (max-width: 400px) {
+    .dropdown-container {
+        margin-right: 3%;
+    }
 }
 
 .arrow {

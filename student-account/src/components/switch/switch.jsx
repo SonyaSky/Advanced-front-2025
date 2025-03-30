@@ -13,9 +13,9 @@ const Switch = ({checked, disabled, onClick}) => {
     return (
         <>
         <button 
+        type='button'
         className={`toggle-btn ${isChecked? "checked": ""} ${isDisabled? "disabled": ""}`}
-        onClick={ToggleSwitch}
-        >
+        onClick={ToggleSwitch}>
         <div className='thumb'></div>
         </button>
         </>
