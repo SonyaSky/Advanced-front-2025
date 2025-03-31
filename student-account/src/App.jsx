@@ -13,7 +13,7 @@ function App() {
     <>
     <ThemeProvider>
       <Routes>
-        <Route path="/" element={<LoginPage />} /> 
+        <Route path="/login" element={<LoginPage />} /> 
       </Routes>
     </ThemeProvider>
     </>
