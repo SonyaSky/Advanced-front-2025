@@ -1,0 +1,31 @@
+.input-container {
+    position: relative;
+    margin-bottom: 30px; 
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    height: 56px;
+    border: 1px solid #3A3A3A80;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 10px; 
+    font-size: 14px;
+    background: white; 
+    padding: 0 4px; 
+    color: #9D9D9D; 
+    transition: 0.2s; 
+}
+
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -10px; 
+    left: 20px; 
+}
