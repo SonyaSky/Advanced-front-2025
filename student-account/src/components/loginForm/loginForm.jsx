@@ -10,9 +10,9 @@ import './loginFormStyle.css';
 import Switch from "../switch/switch";
 import LangDropdown from "../languageDropdown/langDropdown";
 import Button from "../button/Button";
+import LoginUser from "../../api/login";
 
 const loginForm = () => {
-    const { theme } = useTheme();
     const [t, i18n] = useTranslation("login");
     const [isChecked, setIsChecked] = useState(true);
     const [email, setEmail] = useState('');
@@ -30,7 +30,7 @@ const loginForm = () => {
         e.preventDefault(); 
         setIsChecked((prev) => !prev);
     };
-    
+
     const Login = (event) => {
         event.preventDefault();
         const data = {
@@ -39,6 +39,8 @@ const loginForm = () => {
             rememberMe: isChecked
         }
         console.log(data);
+        const res = LoginUser(data);
+        console.log(res);
     }
 
     return(
@@ -50,7 +52,7 @@ const loginForm = () => {
         <Col className="col-12 col-lg-6 d-flex align-content-center justify-content-center">
         <Card className="card">
             <Card.Body id="body">
-                <Form>
+                <Form onSubmit={Login} noValidate>
                 <Card.Title className="login-title text-center">
                     {t("login.title")}
                 </Card.Title>
@@ -80,7 +82,6 @@ const loginForm = () => {
                 className="button primary" 
                 text={t("login.enter")}
                 type="submit"
-                onCLick={Login}
                 />
                 </div>
                 </Form>
